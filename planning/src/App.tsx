@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { createGlobalStyle } from 'styled-components';
 import Form  from './Components/Form';
 import List from './Components/List/List';
+import StopWatch from './Components/StopWatch/StopWatch';
 import { ITask } from './types/ITask';
 
 const GlobalStyle = createGlobalStyle`
@@ -22,6 +23,7 @@ function App() {
 
   const [task, setTask] = useState <ITask[]>([])
   const [select, setSelect] = useState <ITask>()
+  const[completed, setcompleted] = useState<ITask>()
 
   function selectTask(taskSelect: ITask){
     setSelect(taskSelect) 
@@ -30,7 +32,19 @@ function App() {
       select: task.id === taskSelect.id ? true: false
     })))
   }
-  console.log(selectTask)
+
+  function finishTask(){
+    if(select){
+      setSelect(undefined)
+        setTask(oldTask => oldTask.map(task =>{
+              if(task.id === select.id){
+                return {...task, select:false, completed: true}
+              }
+              return task
+        }));
+    }
+}
+
 
   return (
     <> 
@@ -39,6 +53,11 @@ function App() {
       <List task={task}
       selectTask={selectTask}
 
+     />
+
+    <StopWatch
+      select={select}
+      finishTask={finishTask}     
      />
     </>
   );
