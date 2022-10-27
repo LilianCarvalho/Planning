@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { createGlobalStyle } from 'styled-components';
 import Form  from './Components/Form';
+import List from './Components/List/List';
+import { ITask } from './types/ITask';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -17,10 +19,27 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 function App() {
+
+  const [task, setTask] = useState <ITask[]>([])
+  const [select, setSelect] = useState <ITask>()
+
+  function selectTask(taskSelect: ITask){
+    setSelect(taskSelect) 
+    setTask((oldTask: any[]) =>oldTask.map(task =>({
+      ...task, 
+      select: task.id === taskSelect.id ? true: false
+    })))
+  }
+  console.log(selectTask)
+
   return (
     <> 
       <GlobalStyle />
-      <Form />
+      <Form setTask={setTask}/>
+      <List task={task}
+      selectTask={selectTask}
+
+     />
     </>
   );
 }
