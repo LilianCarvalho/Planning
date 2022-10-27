@@ -27,7 +27,7 @@ const StopWatch = ({select, finishTask}: StopWatchProps) => {
    
     return(
         <Container >
-            <Title >Escolha um card para iniciar o cronomêtro</Title>
+            <Title >Escolha uma tarefa para iniciar o tempo</Title>
             <ContainerWatch >
             <Watch
                 time={time}

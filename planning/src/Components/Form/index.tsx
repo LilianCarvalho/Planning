@@ -1,7 +1,7 @@
 import React from "react";
 import { ITask } from "../../types/ITask";
 import {Button} from "../Button";
-import {Container, ContainerFomr, Input, Title } from './styled'
+import {Container, ContainerFomr, Input, Title, Describe } from './styled'
 import {v4 as uuid} from 'uuid'
 
  class Form extends React. Component<{ setTask: React.Dispatch<React.SetStateAction<ITask[]>>}>{
@@ -31,15 +31,16 @@ import {v4 as uuid} from 'uuid'
                     id="task" value={this.state.task}
                     onChange={evento => this.setState({...this.state,task:evento.target.value})}
                     placeholder="Adicione um Estudo" required/>
-                    </ContainerFomr>
-                    <ContainerFomr >
-                    <Title htmlFor="time">Determine o time</Title>
+                </ContainerFomr>
+                <ContainerFomr >
+                    <Title htmlFor="time">Adicione um tempo</Title>
+                    <Describe>E não se esqueça de descansar a cada hora de trabalho concluido</Describe>
                     <Input type="time" name="time" id="time" required step="1" onChange={(_event: any) => this.setState({...this.state,time:_event.target.value})} 
-                    value={this.state.time} min="00:00:00" max="02:00:00"/>
-                    </ContainerFomr>
-                        <Button type="submit" >
+                    value={this.state.time} min="00:00:00" max="01:00:00"/>
+                </ContainerFomr>
+                    <Button type="submit" >
                             Agendar
-                        </Button>
+                    </Button>
             </Container>
          )
      }
