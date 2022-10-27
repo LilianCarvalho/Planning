@@ -5,7 +5,7 @@ import {Container, Title, Table} from './styled'
 const List = ({task, selectTask}: ListProps) => {
     return (
         <Container >
-            <Title>Estudos do Dia</Title>
+            <Title>Tarefas do Dia</Title>
             <Table>
                 {task.map(item => (
                     <Item
