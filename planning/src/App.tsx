@@ -1,6 +1,6 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
-import { Button } from './Components/Button';
+import Form  from './Components/Form';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -20,7 +20,7 @@ function App() {
   return (
     <> 
       <GlobalStyle />
-      <Button>Criando Botão</Button>      
+      <Form />
     </>
   );
 }
