@@ -3,8 +3,6 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import  Form  from "../index";
 
-const onClick = jest.fn()
-
 describe('Form', () => {
     it('Should render Form', () => {
         render(<Form setTask={() => jest} />)
@@ -29,9 +27,7 @@ it('Should must fill in the input "Adicione uma tarefa" and clicked in button', 
 
     const button = screen.getByRole('button', {name: /adicionar/i})
          
-     userEvent.click(button)
-
-  
+     userEvent.click(button) 
     
 })
 
