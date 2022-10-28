@@ -5,9 +5,9 @@ import {Container, ContainerFomr, Input, Title, Describe } from './styled'
 import {v4 as uuid} from 'uuid'
 
  class Form extends React. Component<{ setTask: React.Dispatch<React.SetStateAction<ITask[]>>}>{
-     state ={
-         task :"",
-         time:"00:00"          
+     state = {
+         task : "",
+         time: "00:00"          
      }
      addTask(event: React.FormEvent){
         event.preventDefault()
@@ -26,20 +26,33 @@ import {v4 as uuid} from 'uuid'
             <Container action="" onSubmit={this.addTask.bind(this)}>
                 <ContainerFomr >
                     <Title htmlFor="task">Adicione uma tarefa</Title>
-                    <Input type="text" 
+                    <Input 
+                    type="text" 
                     name="task" 
-                    id="task" value={this.state.task}
-                    onChange={evento => this.setState({...this.state,task:evento.target.value})}
-                    placeholder="Adicione um Estudo" required/>
+                    id="task" 
+                    value={this.state.task}
+                    onChange={e => this.setState({...this.state,task:e.target.value})}
+                    placeholder="Adicione uma tarefa" 
+                    required
+                    />
                 </ContainerFomr>
                 <ContainerFomr >
                     <Title htmlFor="time">Adicione um tempo</Title>
                     <Describe>E não se esqueça de descansar a cada hora de trabalho concluido</Describe>
-                    <Input type="time" name="time" id="time" required step="1" onChange={(_event: any) => this.setState({...this.state,time:_event.target.value})} 
-                    value={this.state.time} min="00:00:00" max="01:00:00"/>
+                    <Input 
+                    placeholder="inputTime" 
+                    type="time" name="time" 
+                    id="time" 
+                    required 
+                    step="1" 
+                    onChange={e => this.setState({...this.state,time:e.target.value})} 
+                    value={this.state.time} 
+                    min="00:00:00" 
+                    max="01:00:00"
+                    />
                 </ContainerFomr>
                     <Button type="submit" >
-                            Agendar
+                            Adicionar
                     </Button>
             </Container>
          )
