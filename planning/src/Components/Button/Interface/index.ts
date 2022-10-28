@@ -1,5 +1,5 @@
 export interface ButtonProps {
-    type?:"button" | "submit" | "reset" | undefined
-    onClick?: ( ) => void 
+    type?: "button" | "submit" | "reset" | undefined
+    onClick?: () => void 
     children: string
 }

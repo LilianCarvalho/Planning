@@ -23,7 +23,7 @@ function App() {
 
   const [task, setTask] = useState <ITask[]>([])
   const [select, setSelect] = useState <ITask>()
-  const[completed, setcompleted] = useState<ITask>()
+   const[completed, setcompleted] = useState<ITask>()
 
   function selectTask(taskSelect: ITask){
     setSelect(taskSelect) 

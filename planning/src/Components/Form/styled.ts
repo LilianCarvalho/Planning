@@ -46,7 +46,5 @@ export const Title = styled.label`
 
 export const Describe = styled.p`
   font-size: 1,5rem;
-  padding: 12px;
-  margin-left: 8px;
   font-weight: bold;
 `
