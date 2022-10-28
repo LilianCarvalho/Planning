@@ -10,11 +10,11 @@ const Watch = ({time = 0}) => {
 
     return(
         <Container >
-            <Number>{minuteTen}</Number>
-            <Number>{minuteUnit}</Number>
-            <Division>:</Division>
-            <Number>{secundTen}</Number>
-            <Number>{secundUnit}</Number>       
+            <Number placeholder="minuteTen" >{minuteTen}</Number>
+            <Number placeholder="minuteUnit">{minuteUnit}</Number>
+            <Division placeholder=":">:</Division>
+            <Number placeholder="secundTen">{secundTen}</Number>
+            <Number placeholder="secundUnit">{secundUnit}</Number>       
         </Container>
     )
 }
