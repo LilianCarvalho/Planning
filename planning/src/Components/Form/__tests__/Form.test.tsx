@@ -31,7 +31,7 @@ it('Should must fill in the input "Adicione uma tarefa" and clicked in button', 
     
 })
 
-it('Shoul must fill in the input "inputTime"', () => {     
+it('Should must fill in the input "inputTime"', () => {     
     const { getByPlaceholderText } = render(<Form setTask={() => jest} />) 
 
     const inputElement = getByPlaceholderText('inputTime')

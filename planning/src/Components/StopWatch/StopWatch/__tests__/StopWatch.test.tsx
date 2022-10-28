@@ -32,8 +32,7 @@ describe('StopWatch', () => {
 
         userEvent.click(Button)
         
-        await userEvent.type(inputElement, '1')
-       
+        await userEvent.type(inputElement, '1')    
 
        
     } )
