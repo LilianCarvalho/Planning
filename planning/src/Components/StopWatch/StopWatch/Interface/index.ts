@@ -1,6 +1,6 @@
 import { ITask } from "../../../../types/ITask"
 
 export interface StopWatchProps{
-    select:ITask | undefined
+    select: ITask | undefined 
     finishTask: () => void
 }
